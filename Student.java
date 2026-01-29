@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Student {
+public class Stud {
     int rollno, m1, m2, m3;
     String name;
     int total;
@@ -26,7 +26,7 @@ public class Student {
     }
 
     public static void main(String[] args) {
-        Student r = new Student();
+        Stud r = new Stud();
         r.getData();
 
         System.out.println("\nStudent Details\n");
@@ -36,3 +36,4 @@ public class Student {
         r.call();
     }
 }
+
