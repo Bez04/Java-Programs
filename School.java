@@ -1,12 +1,11 @@
 import java.util.Scanner;
-
 class Sports {
     String sport;
     int rating;
 
     Sports(String sp, int rt) {
-        this.sport = sp;
-        this.rating = rt;
+        sport = sp;
+        rating = rt;
     }
 }
 
@@ -14,56 +13,57 @@ class Student extends Sports {
     String grade;
     double overall_per;
 
-    Student(String gd, double per, String sp, int rt) {
-        super(sp, rt);
-        this.grade = gd;
-        this.overall_per = per;
+    Student(String sp, int rt, String gd, double per) {
+        super(sp, rt);  
+        grade = gd;
+        overall_per = per;
     }
 }
 
-class Result extends Student {
-
-    Result(String gd, double per, String sp, int rt) {
-        super(gd, per, sp, rt);
+class Result extends Student 
+{
+    Result(String sp, int rt, String gd, double per)
+    {
+        super(sp, rt, gd, per);  
     }
-
     void display() {
-        System.out.println("\nSport Details of the Student:");
+        System.out.println("\nSports Details of Student");
         System.out.println("------------------------------");
-        System.out.println("Sport: " + sport);
-        System.out.println("Rating: " + rating);
+        System.out.println("Sport : " + sport);
+        System.out.println("Rating : " + rating);
 
-        System.out.println("\nAcademic Details of the Student:");
-        System.out.println("------------------------------");
-        System.out.println("Grade: " + grade);
-        System.out.println("Overall Percentage: " + overall_per);
+        System.out.println("\nAcademic Details of Student");
+        System.out.println("-------------------------------");
+        System.out.println("Academic Grade : " + grade);
+        System.out.println("Overall percentage : " + overall_per);
     }
 }
 
-public class School {
-    public static void main(String[] args) {
+class School
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
 
-        Scanner s = new Scanner(System.in);
-
-        System.out.println("Enter Sports Details of the Student:");
+        System.out.println("Enter the Sports Details of student");
         System.out.print("Sport: ");
-        String sp = s.nextLine();
+        String s = sc.nextLine();   
 
         System.out.print("Sport Rating out of 10: ");
-        int rt = s.nextInt();
+        int r = sc.nextInt();
 
-        s.nextLine(); 
+        sc.nextLine(); 
 
-        System.out.println("Enter Academic Details of the Student:");
+        System.out.println("Enter the Academic Details of Student");
         System.out.print("Academic Grade (A-D): ");
-        String gd = s.nextLine();
+        String g = sc.nextLine();
 
-        System.out.print("Overall Percentage: ");
-        double per = s.nextDouble();
+        System.out.print("Overall percentage: ");
+        double p = sc.nextDouble();
 
-        Result ob = new Result(gd, per, sp, rt);
-        ob.display();
+        Result obj = new Result(s, r, g, p);
+        obj.display();
 
-        s.close();
+        sc.close();
     }
 }
