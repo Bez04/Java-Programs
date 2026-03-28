@@ -1,4 +1,7 @@
 import graphics.*;
+import graphics.circle;
+import graphics.Rectangle;
+
 import java.util.Scanner;
 
 public class GraphicsDemo {
